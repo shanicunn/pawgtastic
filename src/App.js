@@ -21,7 +21,7 @@ class App extends React.Component {
        <label name="breed">Breed:</label>
       <input type="text" value="Pet's breed"></input>
       <br></br>
-
+      <label name="gender">Gender:</label>
     </div>
       <div className="column2">
         <img src="" alt="logo"></img>
@@ -29,9 +29,11 @@ class App extends React.Component {
       <br></br>
         <label name="birhday">Birthday:</label>
       <input type="date" value="MM/DD/YY"></input>
+      <br></br>
+      <label name="spayOrNeut">Spayed or Neutered?</label>
       </div>
      <div className="lastRow">
-       
+
      </div>
      
    
