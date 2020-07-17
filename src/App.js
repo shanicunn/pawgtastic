@@ -71,13 +71,13 @@ function ToggleGroupWeight() {
 }
 
 class App extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = [
+  constructor() {
+    super();
+    this.state = [
 
-  //   ]
+    ]
 
-  // }
+  }
 
   // Form functions
   onNameChange = (e) => {
@@ -90,26 +90,26 @@ class App extends React.Component {
       breed: e.target.value,
     })
   }
-  onGenderChange = (e) => {
-    this.setState ({
-      gender: e.target.value,
-    })
-  }
+  // onGenderChange = (e) => {
+  //   this.setState ({
+  //     gender: e.target.value,
+  //   })
+  // }
   onBirthdayChange = (e) => {
     this.setState ({
       birthday: e.target.value,
     })
   }
-  onSpayChange = (e) => {
-    this.setState ({
-      spayOrNeut: e.target.value,
-    })
-  }
-  onWeightChange = (e) => {
-    this.setState ({
-      weight: e.target.value,
-    })
-  }
+  // onSpayChange = (e) => {
+  //   this.setState ({
+  //     spayOrNeut: e.target.value,
+  //   })
+  // }
+  // onWeightChange = (e) => {
+  //   this.setState ({
+  //     weight: e.target.value,
+  //   })
+  // }
   handleFormSubmission = (e) => {
      e.preventDefault();
      this.setState({
@@ -125,10 +125,15 @@ class App extends React.Component {
         {/* Column 1 */}
         <div className="column1">
           <label name="name">Name:</label>
-          <input type="text" value={this.state.name}></input>
+          <input type="text" 
+          value={this.state.name}
+          onChange={this.onNameChange}>
+          </input>
           <br></br>
           <label name="breed">Breed:</label>
-          <input type="text" value={this.state.breed}></input>
+          <input type="text" 
+          value={this.state.breed}
+          onChange={this.onBreedChange}></input>
           <br></br>
            <label name="gender">Gender:</label>
             <ToggleGroupGender />
@@ -140,7 +145,9 @@ class App extends React.Component {
           <label name="upload">Upload a photo</label>
           <br></br>
           <label name="birthday">Birthday:</label>
-          <input type="date" value={this.state.birthday}></input>
+          <input type="date" 
+          value={this.state.birthday}
+          onChange={this.onBirthdayChange}></input>
           <br></br>
           <label name="spayOrNeut">Spayed or Neutered?</label>
           <ToggleGroupSpay />
@@ -150,7 +157,8 @@ class App extends React.Component {
         <label name="weight">Weight:</label>
         <ToggleGroupWeight />
         </div>
-     
+     <button type="submit" 
+     onClick={this.handleFormSubmission}>Submit</button>
    
     </form>
     </div>
