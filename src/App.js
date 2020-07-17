@@ -78,7 +78,44 @@ class App extends React.Component {
   //   ]
 
   // }
-  
+
+  // Form functions
+  onNameChange = (e) => {
+    this.setState ({
+      name: e.target.value,
+    })
+  }
+  onBreedChange = (e) => {
+    this.setState ({
+      breed: e.target.value,
+    })
+  }
+  onGenderChange = (e) => {
+    this.setState ({
+      gender: e.target.value,
+    })
+  }
+  onBirthdayChange = (e) => {
+    this.setState ({
+      
+    })
+  }
+  onSpayChange = (e) => {
+    this.setState ({
+      
+    })
+  }
+  onWeightChange = (e) => {
+    this.setState ({
+      
+    })
+  }
+  handleFormSubmission = (e) => {
+     e.preventDefault();
+     this.setState({
+       FormCompleted: true,
+     })
+   }
   render() {
    
     return (
@@ -88,10 +125,10 @@ class App extends React.Component {
         {/* Column 1 */}
         <div className="column1">
           <label name="name">Name:</label>
-          <input type="text" value="Pet's name"></input>
+          <input type="text" value={this.state.name}></input>
           <br></br>
           <label name="breed">Breed:</label>
-          <input type="text" value="Pet's breed"></input>
+          <input type="text" value={this.state.breed}></input>
           <br></br>
            <label name="gender">Gender:</label>
             <ToggleGroupGender />
@@ -102,8 +139,8 @@ class App extends React.Component {
           <br></br>
           <label name="upload">Upload a photo</label>
           <br></br>
-          <label name="birhday">Birthday:</label>
-          <input type="date" value="MM/DD/YY"></input>
+          <label name="birthday">Birthday:</label>
+          <input type="date" value={this.state.birthday}></input>
           <br></br>
           <label name="spayOrNeut">Spayed or Neutered?</label>
           <ToggleGroupSpay />
