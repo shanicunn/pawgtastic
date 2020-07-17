@@ -1,17 +1,24 @@
 .App {
- width: 500px;
- 
- margin: auto;
-}
-
-form {
   display: grid;
   grid-template-areas: 
+    "sideBar form";
+}
+.sideBar {
+  grid-area: sideBar;
+ 
+}
+
+.form {
+  grid-area: form;
+  display: grid;
+  grid-template-areas: 
+  "header header"
   "column1 column2"
   "lastRow lastRow";
-  margin-top: 10%;
-  background-color: pink;
-  height: 500px;
+  background-color: #861657;
+  background-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);
+  /* height: 500px; */
+  width: 600px;
   padding-top: 5%;
   line-height: 50px;
   border-radius: 15px;
@@ -29,14 +36,16 @@ button {
   background-color: pink;
 
 }
+.header {
+  grid-area: header;
+}
 .column1 {
   grid-area: column1;
-  margin-left: 8%;
 }
 
 .column2 {
   grid-area: column2;
-  margin-right: 8%;
+  margin-right: 10px;
 }
 
 .lastRow {
