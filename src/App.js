@@ -89,7 +89,7 @@ class App extends React.Component {
         </div>
         {/* Column 2 */}
         <div className="column2">
-          <img src="" alt="logo"></img>
+          <img src="/public/logo512.png" alt="Found on flaticon.com"></img>
           <br></br>
           <label name="upload">Upload a photo</label>
           <br></br>
