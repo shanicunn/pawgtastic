@@ -1,6 +1,7 @@
 import React , {useState} from 'react';
 import './App.css';
 import styled from 'styled-components';
+import paw from './paw.png';
 
 // Button Toggle styling
 // Button tutorial
@@ -162,7 +163,7 @@ class App extends React.Component {
 
         {/* Column 2 */}
         <div className="column2">
-          <img src="/public/logo512.png" alt="Found on flaticon.com"></img>
+          <img src={paw} alt="Found on flaticon.com"></img>
           <br></br>
           <label name="upload">Upload a photo</label>
           <br></br>
