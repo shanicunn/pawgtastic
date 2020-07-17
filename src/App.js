@@ -90,6 +90,7 @@ class App extends React.Component {
         {/* Column 2 */}
         <div className="column2">
           <img src="" alt="logo"></img>
+          <br></br>
           <label name="upload">Upload a photo</label>
           <br></br>
           <label name="birhday">Birthday:</label>
