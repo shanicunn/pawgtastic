@@ -16,6 +16,8 @@ class App extends React.Component {
     <form>
       <label name="name">Name:</label>
       <input type="text" value="Pet's name"></input>
+      <img src="" alt="logo"></img>
+      <label name="upload">Upload a photo</label>
     </form>
     </div>
   );
