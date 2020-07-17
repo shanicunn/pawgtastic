@@ -2,6 +2,14 @@ import React , {useState} from 'react';
 import './App.css';
 import styled from 'styled-components';
 import paw from './paw.png';
+import Background from './nathalie-spehner-wG7CL2qdraM-unsplash.jpg';
+
+var sideBarBackground = {
+  width: "100%",
+  height: "400px",
+  backgroundImage: `url(${Background})`
+
+};
 
 // Button Toggle styling
 // Button tutorial
@@ -13,6 +21,7 @@ const ButtonToggle = styled(Tab)`
   opacity: 0.7;
   border: 0;
   outline: 0;
+  margin-left: 5px;
   ${({ active }) =>
   active &&
   ` 
@@ -142,8 +151,17 @@ class App extends React.Component {
    
     return (
     <div className="App">
+    <div className="sideBar">
+      <h2>Pawtastic</h2>
+      <section style={ sideBarBackground }>
+      </section>
+    </div>
       {/* Form */}
-      <form>
+      <form className="form">
+      <div className="header">
+        <h1>Yay, we love dogs! Give us the basics about your pup.</h1>
+      </div>
+      
         {/* Column 1 */}
         <div className="column1">
           <label name="name">Name:</label>
