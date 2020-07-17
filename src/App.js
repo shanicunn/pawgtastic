@@ -31,7 +31,14 @@ function ToggleGroupGender() {
       <ButtonToggle
       active={active === genderType}
       onClick={() => setActive(genderType)}
-      >{genderType}</ButtonToggle>
+      onGenderChange={ (e) => {
+        e.preventDefault();
+        this.setState ({
+        gender: e.target.value,
+      })}
+  }
+      >
+      {genderType}</ButtonToggle>
     )
     )
     }
@@ -61,7 +68,13 @@ function ToggleGroupWeight() {
   return <div>
     {weightClasses.map(weightClass => (
       <ButtonToggle active={active === weightClass}
-      onClick={() => setActive(weightClass)}>
+      onClick={() => setActive(weightClass)}
+      onGenderChange={ (e) => {
+        e.preventDefault();
+        this.setState ({
+        gender: e.target.value,
+    })}
+  }>
         {weightClass}
       </ButtonToggle>
     )
@@ -73,9 +86,17 @@ function ToggleGroupWeight() {
 class App extends React.Component {
   constructor() {
     super();
-    this.state = [
-
-    ]
+    this.state = {
+      name: "",
+      breed: "",
+      gender: "",
+      birthday: "",
+      spayOrNeut: "",
+      weight: "",
+      formCompleted: false,
+    }
+      
+    
 
   }
 
@@ -113,7 +134,7 @@ class App extends React.Component {
   handleFormSubmission = (e) => {
      e.preventDefault();
      this.setState({
-       FormCompleted: true,
+       formCompleted: true,
      })
    }
   render() {
@@ -138,6 +159,7 @@ class App extends React.Component {
            <label name="gender">Gender:</label>
             <ToggleGroupGender />
         </div>
+
         {/* Column 2 */}
         <div className="column2">
           <img src="/public/logo512.png" alt="Found on flaticon.com"></img>
@@ -152,12 +174,13 @@ class App extends React.Component {
           <label name="spayOrNeut">Spayed or Neutered?</label>
           <ToggleGroupSpay />
          </div>
+
         {/* Last Row */}
        <div className="lastRow">
         <label name="weight">Weight:</label>
         <ToggleGroupWeight />
         </div>
-     <button type="submit" 
+     <button className="submit" type="submit" 
      onClick={this.handleFormSubmission}>Submit</button>
    
     </form>
