@@ -49,3 +49,8 @@ button {
   width: 70px;
   margin: auto;
 }
+
+img {
+  height: 50px;
+  margin-left: 20%;
+}
