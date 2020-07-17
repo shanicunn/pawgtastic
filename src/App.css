@@ -13,14 +13,17 @@ form {
   background-color: pink;
   height: 500px;
   padding-top: 5%;
-  
+  line-height: 50px;
+  border-radius: 15px;
 }
 label {
   padding: 5%;
-  
+
 }
 input{
   padding: 5%;
+  border-radius: 10px;
+  border: none;
 }
 button {
   background-color: pink;
