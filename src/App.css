@@ -47,7 +47,7 @@ button {
 .submit {
   height: 40px;
   width: 70px;
-  margin: auto;
+  margin-left: 100%;
 }
 
 img {
