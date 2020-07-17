@@ -97,17 +97,17 @@ class App extends React.Component {
   }
   onBirthdayChange = (e) => {
     this.setState ({
-      
+      birthday: e.target.value,
     })
   }
   onSpayChange = (e) => {
     this.setState ({
-      
+      spayOrNeut: e.target.value,
     })
   }
   onWeightChange = (e) => {
     this.setState ({
-      
+      weight: e.target.value,
     })
   }
   handleFormSubmission = (e) => {
