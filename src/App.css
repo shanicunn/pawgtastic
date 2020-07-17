@@ -1,5 +1,6 @@
 .App {
  width: 500px;
+ 
  margin: auto;
 }
 
@@ -8,15 +9,38 @@ form {
   grid-template-areas: 
   "column1 column2"
   "lastRow lastRow";
+  margin-top: 10%;
+  background-color: pink;
+  height: 500px;
+  
+}
+label {
+  padding: 5%;
+}
+input{
+  padding: 5%;
+}
+button {
+  background-color: pink;
+
 }
 .column1 {
   grid-area: column1;
+  margin-left: 8%;
 }
 
 .column2 {
   grid-area: column2;
+  margin-right: 8%;
 }
 
 .lastRow {
   grid-area: lastRow;
+  margin-left: 20%;
+}
+
+.submit {
+  height: 40px;
+  width: 70px;
+  margin: auto;
 }
