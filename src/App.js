@@ -3,14 +3,19 @@ import './App.css';
 import styled from 'styled-components';
 
 // Button Toggle styling
-const Button = styled.button`
+// Button tutorial
+// https://www.youtube.com/watch?v=gP8nQVlrwc0
+const Tab = styled.button`
   background-color: pink;
 `
-const ButtonToggle = styled(Button)`
+const ButtonToggle = styled(Tab)`
   opacity: 0.7;
-  ${({ active })=>
+  border: 0;
+  outline: 0;
+  ${({ active }) =>
   active &&
   ` 
+  border: 1px black solid;
   opacity: 1;
   `
   }
@@ -25,6 +30,7 @@ function ToggleGroupGender() {
       {genderTypes.map(genderType => (
       <ButtonToggle
       active={active === genderType}
+      onClick={() => setActive(genderType)}
       >{genderType}</ButtonToggle>
     )
     )
@@ -38,7 +44,9 @@ function ToggleGroupSpay() {
   const [active, setActive] = useState(spayOrNeuts[0]);
   return <div>
     {spayOrNeuts.map(spayOrNeut =>  (
-      <ButtonToggle active={active === spayOrNeut}>
+      <ButtonToggle 
+      active={active === spayOrNeut}
+      onClick={() => setActive(spayOrNeut)}>
         {spayOrNeut}
       </ButtonToggle>
     )
@@ -52,7 +60,8 @@ function ToggleGroupWeight() {
   const [active, setActive] = useState(weightClasses[0]);
   return <div>
     {weightClasses.map(weightClass => (
-      <ButtonToggle active={active === weightClass}>
+      <ButtonToggle active={active === weightClass}
+      onClick={() => setActive(weightClass)}>
         {weightClass}
       </ButtonToggle>
     )
