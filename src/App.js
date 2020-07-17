@@ -23,6 +23,8 @@ class App extends React.Component {
       <label name="breed">Breed:</label>
       <input type="text" value="Pet's breed"></input>
       <br></br>
+      <label name="birhday">Birthday:</label>
+      <input type="date" value="MM/DD/YY"></input>
     </form>
     </div>
   );
