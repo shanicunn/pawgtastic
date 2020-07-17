@@ -1,40 +1,63 @@
 import React , {useState} from 'react';
-
 import './App.css';
+import styled from 'styled-components';
+
+// Button Toggle styling
+const Button = styled.button`
+  background-color: pink;
+`
+const ButtonToggle = styled(Button)`
+  opacity: 0.7;
+  ${({ active })=>
+  active &&
+  ` 
+  opacity: 1;
+  `
+  }
+  `
+
 // Gender Button function
 const genderTypes = ["Female", "Male",]
 function ToggleGroupGender() {
   const [active, setActive] = useState(genderTypes[0]);
-  return <div>
-    {genderTypes.map(genderTypes => (
-      <button>
-        {genderTypes}
-      </button>
-    ))}
+  return (
+    <div>
+      {genderTypes.map(genderType => (
+      <ButtonToggle
+      active={active === genderType}
+      >{genderType}</ButtonToggle>
+    )
+    )
+    }
   </div>
+  )
 }
 // Spay Button function
-const spayOrNeut = ["Spayed", "Neutered"]
+const spayOrNeuts = ["Spayed", "Neutered"]
 function ToggleGroupSpay() {
-  const [active, setActive] = useState(spayOrNeut[0]);
+  const [active, setActive] = useState(spayOrNeuts[0]);
   return <div>
-    {spayOrNeut.map(spayOrNeut =>  (
-      <button>
+    {spayOrNeuts.map(spayOrNeut =>  (
+      <ButtonToggle active={active === spayOrNeut}>
         {spayOrNeut}
-      </button>
-    ))}
+      </ButtonToggle>
+    )
+    )
+    }
   </div>
 }
 // Weight Button function
-const weightClass = ["0-25 lbs", "24-50 lbs", "50-100 lbs", "100+ lbs"]
+const weightClasses = ["0-25 lbs", "24-50 lbs", "50-100 lbs", "100+ lbs"]
 function ToggleGroupWeight() {
-  const [active, setActive] = useState(weightClass[0]);
+  const [active, setActive] = useState(weightClasses[0]);
   return <div>
-    {weightClass.map(weightClass => (
-      <button>
+    {weightClasses.map(weightClass => (
+      <ButtonToggle active={active === weightClass}>
         {weightClass}
-      </button>
-    ))}
+      </ButtonToggle>
+    )
+    )
+    }
   </div>
 }
 
