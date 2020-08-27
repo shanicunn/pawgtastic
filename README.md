@@ -9,7 +9,9 @@ Create Pet Basic form page for your client Pawtastic!
 * npm start 
 
 # Requirements
-
 * Minimum of 30 commits
 * Proper folder structure
 * Wireframe
+
+# Wireframe
+![](src/assets/images/pawtastic-wire.png)
